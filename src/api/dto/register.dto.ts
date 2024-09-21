@@ -7,7 +7,7 @@ export class RegisterDTO {
         example: 'your-username',
         required: true
     })
-    @IsString()
+    @IsString({message: 'Invalid email'})
     username: string;
     
     @ApiProperty({
@@ -20,14 +20,14 @@ export class RegisterDTO {
         minNumbers: 1, 
         minSymbols: 1, 
         minUppercase: 1
-    }, { message: 'fudeo' })
+    }, { message: 'Invalid password' })
     password: string;
     
     @ApiProperty({
         description: 'password',
         example: 'your-password'
     })
-    @IsString()
-    @IsEmail()  
+    @IsString({message: 'Invalid email'})
+    @IsEmail({}, {message: 'Invalid email'})  
     email: string;
 }
