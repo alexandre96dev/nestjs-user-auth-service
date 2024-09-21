@@ -1,9 +1,12 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { RegisterDTO } from '../dto/register.dto';
 
-@Controller()
+@ApiTags('Register')
+@Controller('register')
 export class RegisterController {
     @Post()
-    async register() {
-        return;
+    async register(@Body() body: RegisterDTO) {
+        return body;
     }
 }

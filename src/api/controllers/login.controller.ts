@@ -4,7 +4,7 @@ https://docs.nestjs.com/controllers#controllers
 
 import { Controller, Post } from '@nestjs/common';
 
-@Controller()
+@Controller('login')
 export class LoginController {
     @Post()
     async login() {

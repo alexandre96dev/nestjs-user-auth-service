@@ -4,7 +4,7 @@ https://docs.nestjs.com/controllers#controllers
 
 import { Controller, Get, Patch } from '@nestjs/common';
 
-@Controller()
+@Controller('user')
 export class UserController {
     @Get(':userId')
     async getUserInfoById() {
